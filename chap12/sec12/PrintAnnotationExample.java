@@ -13,7 +13,7 @@ public class PrintAnnotationExample {
 		for(Method method : declaredMethods) {
 			//PrintAnnotation 얻기
 			PrintAnnotation printAnnotation = method.getAnnotation(PrintAnnotation.class);
-			//지정한 어노테이션이 적용되어 있으면 어노테이션을 리턴함. 그렇지 않으면 
+			//지정한 어노테이션이 적용되어 있으면 어노테이션을 리턴함. 그렇지 않으면 NULL을 리턴
 			
 			//설정 정보를 이용해서 선 출력
 			printLine(printAnnotation);
