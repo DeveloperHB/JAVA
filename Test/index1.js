@@ -44,3 +44,11 @@ console.log(arr1);
 
 const arr2 = [1,2,3,{name:'홍길동'}] //배열안에 객체를 넣음
 console.log(arr2);
+
+const obj1 = {
+    arr3:[1,2,3],
+    something:{
+        name : '홍길동',
+    },
+};
+console.log(obj1);
