@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*트랜지션 속성의 초기 상태의 값을 지정함*/
+        div {width: 250px; height: 120px; background: skyblue;
+        transition-property: width; /*트랜지션의 변화가 가로폭으로 지정함*/
+        transition-duration: 2s; /*트랜지션 시작과 끝까지의 시간을 의미함 */
+        transition-delay: 1s; /*1초 동안 지연 후 트랜지션 변화를 수행함*/
+        }
+    div:hover{width: 500px;}
+    /*마우스를 올리면 width(가로폭)가 500px로 늘어나는 트랜지션 최종상태 지정*/
+    </style>
+</head>
+<body>
+    <div>transition 속성 지정</div>
+</body>
+</html>
