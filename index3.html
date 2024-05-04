@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>속성 선택자</title>
+    <style type="text/css">
+         a{font-family: "고딕체";font-size: 60px;} /*전체전인 폰트는 고딕체 60px*/ 
+         a[title="daum"]{font-weight: bold;}
+         /*title 속성값이 "daum" 인 요소에 bold 적용*/
+         a[title="cyworld"]{color:aquamarine;}
+         /* title 속성값이 "cyworld"인 요소에 컬러를 aquamarine로 적용함 */
+         a[title^="you"] {font-style:italic;}
+         /* title 속성값이 "you"로 시작하는 요소에 스타일을 이탤릭으로 적용함*/
+         a[title*="wit"] {font-size: 50px;}
+         /* title속성값의 일부분이 "wit" 인 요소에 50px을 적용함*/
+         a[title$="book"] {font-size: 80;}
+         /* title 속성값이 "book"인 요소에 80px을 적용함 */
+    </style>
+</head>
+<body>
+    <a title="naver" href="http://www.naver.com">네이버</a><br>
+    <a title="daum"  href="http://www.daum.net">다음</a><br>
+    <a title="cyworld" href="http://www.cyworld.com">싸이월드</a><br>
+    <a title="google" href="http://www.google.com">구글</a><br>
+    <a title="youtube" href="http://youtube.com">유튜브</a><br>
+    <a title="twitter" href="http://www.twitter.com">트위터<a><br>
+    <a title="facebook" href="http://www.facebook.com">페이스북<a><br>
+     
+</body>
+</html>

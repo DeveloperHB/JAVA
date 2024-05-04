@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        /*트랜지션 속성의 초기 상태의 값을 지정함*/
+        div {width: 200px; height: 120px; position: relative; left:10px;background-color: aquamarine;
+        transition-property: width, left, background-color; /*트랜지션의 width,left,color속성이 변화함을 지정함*/
+        transition-duration: 2s, 2s, 2s; 
+        transition-timing-function: ease-in,linear,ease-in-out;
+        transition-delay: 0s, 1s, 1s; }
+     div:active{width: 400px; left: 300px; background-color: blue;}
+    /*트랜지션 최종상태 지정*/
+    </style>
+</head>
+<body>
+    <div>transition 속성 지정</div>
+    <p>transition-timing-function : 변화하는 속도 조절하는 속성</p>
+    <p>ease-out:시작은 빠르고 점점 느린속도</p>
+    <p>ease-in :width는 400px까지 시작은 느리고 점점 빠른 속도로 트랜지션이 변화함</p>
+    <p>linear : left 300px 위치까지 처음부터 끝까지 같은 속도로 이동함</p>
+    <p>ease-in-out :blue 색상 변경은 시작부터 중간까지 점점 빠르게 변경되고
+        중간에서 끝가지는 점점 느리게 변경됨 </p>
+    <p>transition-delay:스타일이 변화하기전 대기 시간 지정(초 단위로 지정)</p>
+    <p>transition-duration: 변화의 시작과 끝가지의 지속시간</p>
+</body>
+</html>

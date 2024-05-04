@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        #wrap {width: 90%; margin: 10 auto;border:10px solid black ;}
+        /*서브 박스들 정의함*/
+        #wrap div {display: inline-block; height: 120px;}
+        /*첫 번째 박스*/
+        #wrap div:first-child{background-color: pink;}
+        /*두 번째 박스*/
+        #wrap div:nth-child(2){background-color: rgb(194, 34, 60);}
+        /*세 번째 박스*/
+        #wrap div:nth-child(3){background-color: rgb(228, 243, 15);}
+        /*네 번째 박스*/
+        #wrap div:nth-child(4){background-color: rgb(18, 237, 58);}
+        /*다섯 번째 박스*/
+        #wrap div:nth-child(5){background-color: rgb(167, 242, 16);}
+        /*여섯 번째 박스*/
+        #wrap div:nth-child(6){background-color: rgb(201, 33, 61);}
+        /*일곱 번째 박스*/
+        #wrap div:nth-child(7){background-color: rgb(11, 26, 243);}
+        
+        @media all and (min-width:320px) {
+            #wrap div {width: 100%;}
+        }
+        
+        @media all and (min-width:600px) {
+            #wrap div {width: 50%;}
+            #wrap div:last-child {width: 100%;}
+        }
+        
+        @media all and (min-width:1024px) {
+            #wrap div {width: 10%;}
+            #wrap div:last-child {width: 10%;}
+        }
+        /*마지막 div도 20%로 따로 설정해줌
+        설정하지 않으면 min: width 600px 의 조건 때문에 너비가 100%가 됨*/
+        
+      
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div>1</div> <div>2</div> <div>3</div> <div>4</div> <div>5</div> <div>6</div> <div>7</div>
+    </div>
+    <p>미디어 쿼리</p>
+    <p>미디어 쿼리는 기본적으로 미디어 타입을 지정하며
+        and연산자를 사용하여 조건을 추가함.
+        여러 개의 미디어 타입을 지정하기 위해서는 쉼표를 사용함
+        @media 미디어 타입[and 조건]...,미디어 타입 [and 조건]{스타일 지정}
+    </p> 
+</body>
+</html>
