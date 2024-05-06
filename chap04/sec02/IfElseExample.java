@@ -1,19 +1,17 @@
-package chap04.sec02;
+package practice.chap04.sec02;
 
 public class IfElseExample {
 
 	public static void main(String[] args) {
-		int score = 85;
-		if(score>=90) {
-			System.out.println("점수가 90보다 큽니다.");
-			System.out.println("등급은 A입니다.");
-			
-		}else {
-			System.out.println("점수가 90보다 작습니다.");
-		    System.out.println("등급은 B입니다.");
-		}
+		int score = 77;
 		
-		System.out.println("if다음문장 실행!!!");
+		if(score>=90) {
+			System.out.println("점수가 90점 이상입니다");
+			System.out.println("등급은 A이상입니다");
+		} else {
+			System.out.println("점수가 90점 이하입니다");
+			System.out.println("등급은 B이하입니다");
+		}
 	}
 
-	}
+}
