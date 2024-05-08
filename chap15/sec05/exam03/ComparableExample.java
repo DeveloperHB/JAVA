@@ -18,6 +18,7 @@ public class ComparableExample {
 			System.out.println(person.name + ":" + person.age);
 		}
 
+		
 	}
 
 }
