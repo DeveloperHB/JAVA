@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>텍스트 편집</title>
+    <style type="text/css">
+        div {width: 730px; height: 250px; border: 3px solid; 
+             float: left; margin-right: 10px;} 
+        input {width: 100px; height: 30px;}
+    </style>
+    <script type="text/javascript">
+        window.onload = function()
+        { var editor = document.getElementById("editor");
+        //editor 요소에 contentEditable 속성이 부여되어 있으면 해당영역에
+        //포커스를 지정함
+          if (editor.isContentEditable)
+          {
+            editor.focus();
+          }
+
+        };
+        {
+        function setBold(){
+        document.execCommand("bold");
+        }
+       
+            function setItalic(){
+                document.execCommand("Italic");
+            }
+        
+            function setSubcript(){
+                document.execCommand("subScript");
+            }
+        
+            function setSuperscript(){
+                document.execCommand("superScript");
+            }
+            function setSelectAll() {
+                document.execCommand("selectAll");
+            }
+        
+        
+            function setUnselect() {
+                document.execCommand("unSelect");
+            }
+        
+            function setUndo() {
+                document.execCommand("undo");
+            }
+        
+
+    </script>
+</head>
+<body>
+    <input type="button" value="굵게" onclick="setBold();">
+    <input type="button" value="이탤릭체" onclick="setItalic();">
+    <input type="button" value="아래첨자" onclick="setSubscript();">
+    <input type="button" value="윗첨자" onclick="setSuperscript();">
+    <input type="button" value="모두 선택" onclick="setSelectAll();">
+    <input type="button" value="선택 취소" onclick="setUnselect();">
+    <input type="button" value="되돌리기" onclick="setUndo();"><br><br>
+    <div id="editor" contenteditable></div>
+
+    <!--
+        *contenteditable 속성(특정 요소의 내용을 편집할 수 있도록 지정하는 역할)
+        ==> true(편집가능), false(편집불가능)
+        *designMode 속성(페이지 전체에 편집 속성을 부여하고자 할 때 사용)
+        ==> on(편집 가능으로 지정), off(편집 불가능)
+        *execCommand() 메서드
+        ==> contenteditable 속성이나 designMode 속성을 사용하여 편집이 가능하도록
+        지정한 상태에서 execCommand() 메서드를 사용하여 다양한 텍스트 편집을 수행함
+    -->
+    
+</body>
+</html>

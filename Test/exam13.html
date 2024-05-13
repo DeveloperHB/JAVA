@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>드래그 앤 드롭 실습</title>
+    <style type="text/css">
+        div { width: 270px; height: 288px; border: 5px solid;
+             float: left; margin-right: 30px;}
+    </style>
+    <script type="text/javascript">
+        function dropset(event)
+        {
+            event.preventDefault();
+        }
+
+        function drag(event)
+        {//드래그 앤 드롭의 대상이 되는 데이터를 저장함
+            event.dataTransfer.setData("Text", event.target.id)
+        }
+
+        function drop(event)
+        { //드래그 앤 드롭의 대상이 되는 데이터를 가져옴
+            var data = event.dataTransfer.getData("Text");
+            //지정한 데이터를 대상에 추가함
+
+            event.target.appendChild(document.getElementById(data));
+            event.preventDefault();
+        }
+
+    </script>
+</head>
+<body>
+    <div id="div1"  ondrop="drop(event)" ondragover="dropset(event)">
+        <img id="drap1" src="1.jpg" width="270" draggable="true"
+         ondragstart="drag(event)">
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="dropset(event)">
+
+    </div>
+    <!--
+        draggable 속성은 드래그 속성을 부여하는 것, 
+        속성의 값이 true이면 드래그를 가능, false 이면 드래그를 못함
+        1)dragstart : 드래그 시작시 발생함
+        2)drag : 드래그 중에 발생함
+        3)dragend : 드래그 종료 했을 때 발생함
+        4)dragenter: 드래그 요소가 드롭 요소 범위 안에 들어올 때 발생함
+        5)dragleave: 드래그 요소가 드롭 요소에서 나갔을 때 발생
+        6)dragover: 드래그 요소가 드롭 요소 위에서 드래그하고 있을 때 발생
+        7)drop : 드롭하였을 때 발생
+
+        * DataTransfer 객체(드래그 앤 드롭 데이터를 교환하기 위해 사용)
+        setData(): 데이터를 보관(드래그 앤 드롭을 위한 새로운 요소를 정의함)
+        ==>setData(type, data)
+        getData(): 데이터를 가져옴( setData()에서 정의한 요소와 데이터를 가져옴)
+        clearData(type) : 드래그 앤 드롭에 사용할 데이터를 초기화
+    -->
+    
+</body>
+</html>

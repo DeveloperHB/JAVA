@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 요소 실습</title>
+</head>
+<body>
+    <form>
+
+        <!--datalist 요소는 텍스트 박스에 대한 옵션 리스트를 보여줌
+        형식
+        <intput type = 타입 name= 이름 list=datalist id값>
+        <datalist id = id 값>
+            <option value 값1>
+            <option value 값2>
+            <option value 값3
+            ....... 
+            </datalist>
+            -->
+            <!--
+                keygen 요소는 데이터를 전송할 때 키를 생성하는 역할을 수행
+                사용자들 간에 통신을 할 때 안전하게 데이터를 주고받기 위해 사용함
+                <keygen name = "이름">
+
+                1)autofocus 속성은 웹 페이지의 로딩이 끝남과 동시에 지정한 입력 타입에 자동으로
+                포커스가 위치하게 하는 역할을 수행
+
+                2)placeholder 속성은 입력 타입에 기본 텍스트를 힌트로 지정하는 역할을 수행함
+                3)required 속성은 필수 입력 항목을 지정하는 역할을 수행함
+            -->
+        <table>
+            <tr>
+                <td>이름</td>
+                <td><input type="text" name = "name" placeholder="이름을 입력하세요."
+                    autofocus required > </td>
+            </tr>
+            <tr>
+                <td>이메일</td>
+                <td><input type="email" name = "email" placeholder="이메일을 입력하세요." > </td>
+            </tr>
+            <tr>
+                <td>홈페이지</td>
+                <td><input type="url" name = "homepage" placeholder="개인 홈페이지 주소입력" > </td>
+            </tr>
+            <tr>
+                <td>생년월일</td>
+                <td><input type="date" name = "birthday" > </td>
+            </tr>
+            <tr>
+                <td>대학졸업 년도</td>
+                <td><input type="number" name = "graduate" min="1990" max="2024" > </td>
+            </tr>
+            <tr>
+                <td>평가 등급</td>
+                <td><input type="range" name = "level" min="1" max="10" value="7" >
+                <output name="ret" onforminput="value=level.value"></output>
+                </td>
+            </tr>
+            <tr>
+                <td>좋아하는 TV 프로그램</td>
+                <td><input type="text" name = "site" list="site">
+                <datalist id="site">
+                    <option value="런닝맨">
+                    <option value="1박2일">
+                    <option value="살림남">
+                    <option value="슈퍼맨이 돌아왔다">
+                                                
+                </datalist>
+            </td>
+            </tr>
+            <tr>
+            <td> 좋아하는 색상</td>
+            <td> <input type="color" name="color"> </td>
+            </tr>
+            <tr>
+                <td> <keygen name="key">
+                 <input type="submit" value="제출하기">
+                 </td>
+                </tr>
+        
+
+        </table>
+    </form>
+</body>
+</html>
