@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM CSS</title>
+    <style>
+        #container {
+            width: 400px;
+            margin: 50px auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <p>도형 위로 마우스 포인터를 올려놓으세요.</p>
+        <svg id="star" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+            <polygon points="50,0 61,35 98,35 68,57 79,91 50,70 21,91 32,57 2,35 39,35" fill="#FF0000" />
+        </svg>
+    </div>
+
+    <script>
+        let myStar = document.querySelector("#star");
+        let colors = ["#FF0000", "#FF7F00", "#FFFF00", "#00FF00", "#0000FF", "#4B0082", "#9400D3"]; // 빨주노초파남보 색상 배열
+        let index = 0;
+
+        function changeColor() {
+            myStar.querySelector("polygon").setAttribute("fill", colors[index]); // 별의 색상 변경
+            index = (index + 1) % colors.length; // 다음 색상을 위해 인덱스 증가 및 배열 길이로 나눈 나머지 계산
+        }
+
+        let timer = setInterval(changeColor, 1000); // 1초마다 색상 변경
+
+        myStar.addEventListener("mouseover", function(){ // 마우스 오버 시 타이머 중지
+            clearInterval(timer);
+        });
+        myStar.addEventListener("mouseout", function() { // 마우스 아웃 시 타이머 재시작
+            timer = setInterval(changeColor, 1000);
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/product.css">
+</head>
+<body>
+    <div id="container">
+        <h1 id="heading">미드 챔프 제드</h1>
+        <div id="prod-pic">
+            <img src="images/jed.jpg" alt="미드 챔프 제드"
+            id="champ" width="500" height="400" onclick="displaySrc()">
+            
+        </div>
+    </div>
+
+    <script>
+        function displaySrc() {
+            let zed = document.querySelector("#zed");//id가 zed인 요소에 접근함
+            alert("이미지소스: " + zed.getAttribute("src"));//zed 속성을 알림창에 표시
+                                   //이미지의 경로 속성을 가져와서 알림 창에 표시함
+        }
+
+
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 이벤트 객체 5</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <img src="images/zed.jpg" id="zed">
+    </div>
+    <script>
+        let cover = document.getElementById("zed");
+        cover.addEventListener("mouseover", changePic, false);
+        //false(버블링):DOM의 자식노드에서 부모노드 전달
+        cover.addEventListener("mouseout", originPic, false);
+        //mouseover mouseout : 이벤트 객체
+
+        function changePic(){
+            cover.src = "images/tp.jpg";
+        }
+        function originPic() {
+            cover.src = "images/zed.jpg"
+        }
+        
+    </script>
+    
+</body>
+</html>

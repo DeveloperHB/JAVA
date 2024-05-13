@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>location Object</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 10px auto;
+        }
+        #display{
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #222;
+            box-shadow: 1px 0 1px #ccc;
+        }
+        p {
+            font-size: 1em;
+        }
+        button{
+            margin-top: 20px;
+            text-align: center;
+        }
+    
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>location 객체</h2>
+        <div id="display">
+            <script>
+                document.write("<p><b>location.href : </b>" + location.href +"</p>");
+                document.write("<p><b>location.host : </b>" + location.host +"</p>");
+                document.write("<p><b>location.protocol : </b>" + location.protocol +"</p>");
+            </script>
+
+        </div>
+        <button onclick="location.replace('https://www.naver.com/')">naver</button>
+    </div>
+    <!-- location 객체
+    1)location.href : 전체 URL
+    2)location.host : URL 의 host 이름과 포트번호를 담고있음
+    3)location.protocol: URL 의 프로토콜을 저장함
+
+    location.replace(): 현재 문서의 URL을 지우고 다른 URL의 문서로 교체함
+    location.reload(): 현재 문서를 다시 불러옴
+    location.toString(): 현재 문서의 URL을 문자열로 반환
+    -->
+    
+</body>
+</html>

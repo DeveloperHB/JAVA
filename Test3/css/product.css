@@ -1,0 +1,20 @@
+#container {
+    width: 600px;
+    margin: 0 auto;
+}
+#prod-pic, #desc{
+    float: left;
+}
+#prod-pic {
+    margin: 20px 20px auto 10px;
+    padding: 0;
+}
+#zed {
+    box-shadow: 1px 1px 2px #eee;
+    outline: 1px dashed #ccc;
+    outline-offset: -7px;
+}
+
+h1 {
+    font-size: 2em;
+}

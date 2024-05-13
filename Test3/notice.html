@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <style>
+        #content {
+        border: 2px double skyblue;
+        border-radius:12px;
+        padding: 10px;
+        position: relative;
+        }
+        ul {
+            margin-left: 15px;
+            list-style-type:none ;
+        }
+        ul li {margin: 10px 5px;}
+        button{
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div id="content">
+        <h1>공지사항</h1>
+        <ul>
+            <li>항목1</li>
+            <li>항목2</li>
+            <li>항목3</li>
+            <li>항목4</li>
+            <li>항목5</li>
+        </ul>
+        <div class="close-button">
+            <button onclick="javascript:window.close();">닫기</button>
+        </div>
+                   
+    </div>
+    <!-- 팝업창 닫기-->
+        <!-- window 객체 메소드: window 객체는 기본 객체이므로 메소드이름만 사용가능
+        1)alrert(): 알림창 표시함
+        2)close(): 현재 창을 닫음
+        3)confirm(): 확인/취소 버튼이 있는 확인창을 표시함
+        4)open(): 새로운 창 열어줌
+        5)prompt(): 프롬프트창에 입력한 텍스트를 반환함
+        -->
+    
+</body>
+</html>

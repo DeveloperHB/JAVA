@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Event 객체 6</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 10px auto;
+        }
+    </style
+</head>
+
+<body>
+    <div id="container">
+        <img src="images/zed.jpg" id="zed">
+    </div>
+
+    <script>
+        let cover = document.getElementById("cover");
+        cover.addEventListener("mouseover", function() {
+            cover.src = "images/zed.jpg"
+        });
+
+        cover.addEventListener("mouseout", function() {
+            cover.src = "images/tp.jpg"
+        });
+        </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM event 객체2</title>
+</head>
+<style>
+    #container {
+        width: 500px;
+        margin: 10px auto;
+    }
+</style>
+<body>
+    <div id="container">
+        <img src="images/tp.jpg" id="tp">
+        <img src="images/zed.jpg" id="zed" style="display: none;">
+    </div>
+     <script> var tp = document.querySelector("#tp");
+        var zed = document.querySelector("#zed");
+
+        // 이미지 클릭 시 togglePic 함수 실행
+        tp.onclick = togglePic;
+        zed.onclick = togglePic;
+
+        function togglePic() {
+            // 현재 보이는 이미지를 감추고, 반대의 이미지를 보이게 함
+            if (tp.style.display !== "none") {
+                tp.style.display = "none";
+                zed.style.display = "inline-block";
+            } else {
+                tp.style.display = "inline-block";
+                zed.style.display = "none";
+            }
+        }
+        </script>
+        
+    <!-- 
+        함수 이름을 사용해 연결하기
+        함수를 따로 정의해 놓았다면 DOM 요소에 함수 이름을 사용해 연결
+        ==> 이 때 함수 이름 다음에 괄호를 추가하지 않음
+     -->
+    
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM 이벤트 객체 3</title>
+</head>
+<style>
+    #container {
+        width: 500px;
+        margin: 10px auto;
+    }
+</style>
+<body>
+    <div id="container">
+        <img src="images/zed.jpg" id="zed">
+        <img src="images/zed.jpg" id="zed" style="display: none;">
+    </div>
+    <script>
+        let zed = document.querySelector("#zed"); // id = cup인 요소를 가져옴
+        zed.onclick = function(event){
+        alert("이벤트 유형:" + event.type + ", 이벤트 발생 위치:" + event.pageX+","+event.pageY);
+                  //이미지 요소를 클릭하면 그 위치를 확인하기 위해 event 객체를 함수의 인수로?
+        }
+    </script>
+    <!-- DOM의 event 객체(웹문서에서 이벤트 발생한 요소가 무엇인지,
+        어떤 이벤트가 발생했는지 등의 정보가 담긴 객체임)
+        event.type : 발생한 이벤트의 이름을 반환
+        event.pageX : 현재 문서 기준으로 이벤트가 발생한 가로 위치를 반환
+        event.pageY : 현재 문서 기준으로 이벤트가 발생한 세로 위치를 반환
+     -->
+
+</body>
+</html>

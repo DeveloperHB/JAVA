@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ScreenObject</title>
+    <style>
+        #container{
+            width: 400px;
+            margin: 10px auto;
+        }
+        .display {
+            margin-top: 10px;
+            padding: 10px;
+            border: 1px solid #222;
+            box-shadow: 1px 0 1px #ccc;
+        }
+        p {
+            font-size: 1em;
+        }
+        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div class="display">
+            <script>
+            document.write("<p><b>screen.avaiWidth : </b>" + screen.availWidth +"</p>");
+            document.write("<p><b>screen.avilHeight : </b>" + screen.availHeight + "</p>");
+            document.write("<p><b>screen.width : </b>" + screen.width + "</p>");
+            document.write("<p><b>screen.height : </b>" + screen.height + "</p>");
+            </script>
+        </div>
+    </div>
+    <!--screen 객체 :현재사용하는 사용자의 하면 크기, 화면 정보를 다룸
+    1)availWidth : UI(작업표시줄) 영역을 제외한 내용 표시 영역의 너비를 나타냄
+    2)availHeight: UI(작업표시줄) 영역을 제외한 영역의 높이를 나타냄
+    3)width:UI영역을 포함한 화면의 너비를 나타냄
+    4)width:UI영역을 포함한 화면의 높이를 나타냄-->
+    
+</body>
+</html>

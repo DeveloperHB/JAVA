@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM event 객체</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 10px auto;
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <img src="images/tp.jpg" id="tp">
+    </div>
+
+    <script>
+        var tp = document.querySelector("#tp"); //id = tp인 요소를 가져옴
+        tp.onclick = function() {
+            alert("이미지를 클릭했습니다");
+        }
+    </script>
+    <!-- DOM 요소에 이벤트 처리기 함수를 직접 연결
+    tp.onclick = function() {
+        alrert("이미지를 클릭했습니다");
+    } ==> 이미지 요소를 가져와 변수에 저장한 후
+          onClick을 사용해 변수에 이벤트 처리 함수를 직접 연결함
+        -->
+    
+</body>
+</html>

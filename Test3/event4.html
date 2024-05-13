@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM event 객체 4</title>
+    <style>
+        #container {
+            width: 500px;
+            margin: 10px auto;
+        }
+    </style
+</head>
+
+<body>
+    <div id="container">
+        <img src="images/zed.jpg" id="zed">
+    </div>
+
+    <script>
+        var zed=document.getElementById("zed");
+        zed.onclick = function(event){
+            alert("클릭한 이미지 파일 : " + this.src);
+            //event 객체에는 이벤트 정보만 들어 있음
+            //이벤트가 발생한 대상에 접근하려면 이벤트 처리기에서 this를 사용함
+        }
+    </script>
+</body>
+</html>
