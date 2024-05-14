@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+  
+</head>
+<body>  
+    <script type="text/javascript">
+        window.onload = function()
+        {
+            let count = localStorage.getItem("counter")
+            if(count == null)
+            {
+                localStorage.setItem("counter",1);
+                alert("처음 방문을 환영합니다!!")
+            }
+            else
+            {
+                alert(count + " 번째 방문을 환영합니다.");
+                count++;
+                localStorage.setItem("counter", count);
+            }
+        };
+        // session은 기록 초기화 local은 기록 누적
+    </script>
+    
+</body>
+</html>

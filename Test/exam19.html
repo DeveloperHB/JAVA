@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹 DB 생성과 접근</title>
+    <style type="text/css">
+        .titleStyle
+        {font-weight: bold;
+         text-align: center;
+         font-size: x-large;
+         }
+         .inputStyle
+         {
+            text-align: center;
+         }
+    </style>
+    
+</head>
+<body>
+    <script type="text/javascript">
+        let db; /* 데이터베이스 이름 지정 */
+        Window.onload = function()
+        {
+            db = openDataBase("exam", "1.0", "exam database", 1024*1024);
+            //openDantaBase(DB이름, DB버전, DB설명, DB크기) : DB 생성
+            db.transaction(exeCreate); //트랜잭션 시작하는 메서드
+        }
+
+        function exeCreate(tx) {
+            tx.executeSql("create table scard(sno, sname, computer, java, c, python)");
+            //scard : 테이블 이름
+        }
+
+        function insertData(){
+            db.transaction(exe.Insert);
+        }
+
+        function exeInsert(tx) {
+            tx.executeSql("insert into scard values(?,?,?,?,?,?)",
+            [sno.value, sname.value, computer.value, java.value, c.value, python.value]);
+        }
+
+        function viewData()
+        {
+            db.transaction(exeSelect);
+        }
+
+        function exeSelect(tx)
+        {
+            tx.executeSql("select * from scard", [], viewTable);
+        }
+
+        function viewTable(tx, rs)
+        {
+            for(var i = 0; i <rs.rows.length; i++)
+            {
+                var row = rs.rows.item(i);
+                document.getElementById("viewData").innerHTML += "<tr><td>"+
+                    row["sno"] + "</td><td>" + row["sname"] + "</td><td>" +
+                        row["computer"] + "</td><td>" +row["java"]+"</td><td>"
+                            +row["c"] + "</td><td>" +row["python"]+"</td></tr>";
+            }
+        }
+    </script>
+    <!-- https://durimongboksil.tistory.com/177 -->
+</body>
+</html>
