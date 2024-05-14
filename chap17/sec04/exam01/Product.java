@@ -17,7 +17,7 @@ public class Product {
     public String getCompany() {return company; }
     public int getPrice() {return price; }
     
-    @Override
+   
     public String toString() {
     	return new StringBuilder()
     			.append("{")
