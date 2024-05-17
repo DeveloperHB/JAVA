@@ -1,0 +1,18 @@
+package chap18.sec10;
+
+import java.io.Serializable;
+
+public class Member implements Serializable {
+	//private static final long seralVersionUID = -622284561026719240L;
+    private String id;
+	private String name;
+	
+	public Member(String id, String name) {
+		this.id = id;
+		this.name = name;
+	}
+	
+	public String toString() {return id + " : " + name;}
+	}
+			
+
