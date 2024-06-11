@@ -7,7 +7,7 @@
 <body>
 <%-- form 태그와 input 태그로 간당한 회원 가입 양식 만들기 --%>
 <h3>회원가입</h3>
-<form action='#'name="member"method="post">
+<form action="form04_process.jsp" name="member"method="post">
 <p>아이디 : <input type="text" name="id">
 <input type="button" value="아이디 중복검사">
 <p>비밀번호:<input type="password" name="passwd">
