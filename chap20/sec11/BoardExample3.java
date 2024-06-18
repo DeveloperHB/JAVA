@@ -14,7 +14,7 @@ public class BoardExample3 {
 	//생성자
 	public BoardExample3() {
 		try {
-			Class.forName("com.mysql.cj.jabc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			String url = "jdbc:mysql://localhost:3306/thisisjava";
 			conn = DriverManager.getConnection(url,"root","1234");
 		}catch(Exception e) {
