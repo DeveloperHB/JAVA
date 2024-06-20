@@ -31,6 +31,8 @@ public class AdminMenu extends AbstractMenu {
 		case "3":
 			deleteMovie();
 			return this;
+			
+			
 		
 		case "b": return prevMenu;
 		default : return this;
