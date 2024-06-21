@@ -78,6 +78,10 @@ try {
 </table>
 <table border='0' width '600>
 <tr>
+<td align='left'>
+<a href="modify_pass.jsp?num=<%=num %>">[수정하기]</a>
+<a href="delete_pass.jsp?num=<%=num %>">[삭제하기]</a>
+</td>
 <td align='right'>
 <a href='write.jsp'>[글쓰기]</a>
 <a href='listboard.jsp'>[목록보기]</a>

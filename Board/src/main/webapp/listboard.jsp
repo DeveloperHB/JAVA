@@ -14,6 +14,19 @@
 </head>
 <body>
 <%
+String pageNum = request.getParameter("pageNum");
+if(pageNum == null) {
+pageNum = "1";
+}
+
+int listSize = 5;
+int currentPage = Integer.parseInt(pageNum);
+int startRow = (currentPage-1)*listSize + 1;
+int endRow = currentPage * listSize ;
+int lastRow = 0;
+int i = 0;
+int num[] = {0};
+
 String driver = "com.mysql.cj.jdbc.Driver";
 String url = "jdbc:mysql://127.0.0.1:3306/Test";
 
@@ -24,6 +37,11 @@ Statement stmt = conn.createStatement();
 
 String strSQL = "select * from tblboard";
 ResultSet rs = stmt.executeQuery(strSQL);
+
+while(rs.next()) {
+	num[i] = rs.getInt("num");
+}
+lastRow = num[0];
 
 %>
 
@@ -45,14 +63,21 @@ ResultSet rs = stmt.executeQuery(strSQL);
 </TR>
 
 <%
-while(rs.next()){
+if(lastRow > 0) {
+	strSQL = "select * from tblboard where num between" +startRow + "and" + endRow;
+	rs = stmt.executeQuery(strSQL);
 	
-	int num = rs.getInt("num");
+	for(i=0; i<listSize;i++) {
+		
+	if(rs.next()){
+	int listnum = rs.getInt("listnum");
 	String name = rs.getString("name");
 	String email = rs.getString("email");
 	String title = rs.getString("title");
 	String writedate = rs.getString("writedate");
 	int readcount = rs.getInt("readcount");
+    
+	
 	%>
 	<TR bgcolor='ededed'>
 	<TD align = center><font size=2 color='black'><%=num%></font></TD>
@@ -69,8 +94,10 @@ while(rs.next()){
 	</td>
 	<td align=center><font size=2><%=readcount %></font>
 	</td>
+	</TR>
 	
 	<% 
+}
 }
 %>
 </table>
@@ -96,7 +123,37 @@ while(rs.next()){
 rs.close();
 stmt.close();
 conn.close();
-%>
+}
+
+
+if(lastRow > 0){
+   int setPage = 1;
+   int lastPage = 0;
+   if(lastPage % listSize == 0)
+      lastPage = lastRow/listSize;
+   else 
+      lastPage = lastRow/ listSize + 1;
+   
+   if(currentPage > 1){
+	   %>
+	   <a href="listboard.jsp?pageNum=<%=currentPage-1%>">[이전]</a>
+	   <%
+   }
+   while(setPage <= lastPage) {
+	   %>
+	   <a href="listboard.jsp?pageNum=<%=setPage%>">[<%=setPage%>]</a>
+   <%
+	   setPage = setPage +1;
+   }
+   if(lastPage > currentPage) {
+	   %>
+	   <a href="listboard.jsp?pageNum=<%=currentPage+1%>">[다음]</a>
+	   <%
+   }
+}
+ %>
+ 
+
 </center>
 </body>
 </html>
