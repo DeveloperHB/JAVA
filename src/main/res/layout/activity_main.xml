@@ -4,30 +4,99 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:rotationX="2"
-    android:rotationY="2">
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/tv_hello"
-        android:layout_width="780dp"
-        android:layout_height="782dp"
-        android:text="Hello"
-        android:textSize="96sp"
+        android:id="@+id/tv_timer1"
+        android:layout_width="136dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="80dp"
+        android:text="현재"
+        android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/tv_timer"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.191" />
+        app:layout_constraintVertical_bias="0.277" />
 
-    <Button
-        android:id="@+id/btn_kor"
-        android:layout_width="386dp"
-        android:layout_height="318dp"
-        android:text="Button"
+    <TextView
+        android:id="@+id/tv_people"
+        android:layout_width="217dp"
+        android:layout_height="99dp"
+        android:layout_marginStart="80dp"
+        android:text="참가자1"
         android:textSize="60sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.468"
+        app:layout_constraintHorizontal_bias="0.394"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.07" />
+
+    <TextView
+        android:id="@+id/tv_point"
+        android:layout_width="154dp"
+        android:layout_height="127dp"
+        android:text="0.00"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.667" />
+
+    <TextView
+        android:id="@+id/tv_timer"
+        android:layout_width="136dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="80dp"
+        android:text="0.00"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.464" />
+
+    <TextView
+        android:id="@+id/tv_random"
+        android:layout_width="141dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="80dp"
+        android:text="0.00"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.889"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.469" />
+
+    <TextView
+        android:id="@+id/tv_timer2"
+        android:layout_width="136dp"
+        android:layout_height="88dp"
+        android:layout_marginStart="80dp"
+        android:text="목표"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.815"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.276" />
+
+    <Button
+        android:id="@+id/btn_kor"
+        android:layout_width="275dp"
+        android:layout_height="146dp"
+        android:layout_marginBottom="96dp"
+        android:text="시작/중지"
+        android:textSize="48sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
