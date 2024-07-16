@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.servlet.ModelAndView;
 
 @ControllerAdvice
-
 public class CommonExceptionAdvice {
-	private static final Logger logger = LoggerFactory.getLogger(CommonExceptionAdvice.class);
-	
+	private static final Logger logger = 
+			LoggerFactory.getLogger(CommonExceptionAdvice.class);
+
 	@ExceptionHandler(Exception.class)
 	private ModelAndView errorModelAndView(Exception ex) {
 		
@@ -18,7 +18,6 @@ public class CommonExceptionAdvice {
 		modelAndView.setViewName("/error_common");
 		modelAndView.addObject("exception", ex);
 		
-		return modelAndView;
+		return modelAndView;		
 	}
-
 }

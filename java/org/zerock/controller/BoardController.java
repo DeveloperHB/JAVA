@@ -50,31 +50,30 @@ public class BoardController {
 	}
 	
 	@RequestMapping(value="/read", method = RequestMethod.GET)
-	public void read(@RequestParam("bno") int bno, Model model)
-	    throws Exception {
-		model.addAttribute(service.read(bno));
+	public void read(@RequestParam("bno") int bno, Model model) 
+			throws Exception {
+		model.addAttribute(service.read(bno));		
 	}
 	
 	@RequestMapping(value="/remove", method = RequestMethod.POST)
-	public String remove(@RequestParam("bno")int bno, RedirectAttributes rttr)
+	public String remove(@RequestParam("bno") int bno, RedirectAttributes rttr)
 			throws Exception {
 		service.remove(bno);
 		
-		rttr.addFlashAttribute("msg","SUCCESS");
+		rttr.addFlashAttribute("msg", "SUCCESS");
 		
-		return "redirect:/board/listAll";
-				
+		return "redirect:/board/listAll";		
+		
 	}
 	
 	@RequestMapping(value="/modify", method = RequestMethod.GET)
 	public void modifyGET(int bno, Model model) throws Exception {
 		model.addAttribute(service.read(bno));
-	
 	}
 	
 	@RequestMapping(value="/modify", method = RequestMethod.POST)
 	public String modifyPOST(BoardVO board, RedirectAttributes rttr)
-	throws Exception{
+			throws Exception {
 		logger.info("modify post");
 		
 		service.modify(board);
@@ -83,14 +82,14 @@ public class BoardController {
 		return "redirect:/board/listAll";
 	}
 	
-	@RequestMapping(value="/listCri" ,  method = RequestMethod.GET)
+	@RequestMapping(value="/listCri", method = RequestMethod.GET)
 	public void listAll(Criteria cri, Model model) throws Exception {
 		logger.info("show list Page with Criteria......................");
 		
 		model.addAttribute("list", service.listCriteria(cri));
 	}
-	
-	@RequestMapping(value = "/listPage" , method = RequestMethod.GET)
+
+	@RequestMapping(value = "/listPage", method = RequestMethod.GET)
 	public void listPage(@ModelAttribute("cri") Criteria cri, Model model) throws Exception {
 		logger.info(cri.toString());
 		
@@ -102,47 +101,44 @@ public class BoardController {
 		pageMaker.setTotalCount(service.listCountCriteria(cri));
 		
 		model.addAttribute("pageMaker", pageMaker);
-		
 	}
 	
-	@RequestMapping(value="/readPage" ,  method = RequestMethod.GET)
-	public void read(@RequestParam("bno") int bno,
+	@RequestMapping(value = "/readPage", method = RequestMethod.GET)
+	public void read(@RequestParam("bno") int bno, 
 			@ModelAttribute("cri") Criteria cri, Model model)
-	throws Exception {
+					 throws Exception {
 		
 		model.addAttribute(service.read(bno));
 	}
 	
-	
-	@RequestMapping(value="/removePage" ,  method = RequestMethod.POST)
-	public String remove(@RequestParam("bno") int bno, Criteria cri,
-			RedirectAttributes rttr) throws Exception  {
+	@RequestMapping(value = "/removePage", method = RequestMethod.POST)
+	public String remove(@RequestParam("bno") int bno, Criteria cri, 
+		       RedirectAttributes rttr) throws Exception {
 		
 		service.remove(bno);
 		
 		rttr.addAttribute("page", cri.getPage());
 		rttr.addAttribute("perPageNum", cri.getPerPageNum());
-		rttr.addAttribute("msg", "SUCESS");
+		rttr.addFlashAttribute("msg", "SUCCESS");
 		
 		return "redirect:/board/listPage";
-		
 	}
 	
 	@RequestMapping(value = "/modifyPage", method = RequestMethod.GET)
-	public void modifyPagingGET(@RequestParam("bno") int bno,
+	public void modifyPagingGET(@RequestParam("bno") int bno, 
 			@ModelAttribute("cri") Criteria cri, Model model)
-	throws Exception {
+		      throws Exception {
 		model.addAttribute(service.read(bno));
-}
+	}
 	
-	@RequestMapping(value = "/modifyPage", method = RequestMethod.POST)
-	public String modifyPagingPOST(BoardVO board, Criteria cri,
-			RedirectAttributes rttr) throws Exception {
+	@RequestMapping(value = "/modifyPage", method = RequestMethod.POST) 
+	public String modifyPagingPOST(BoardVO board,  Criteria cri, 
+			RedirectAttributes rttr ) throws Exception {
 		service.modify(board);
 		rttr.addAttribute("page", cri.getPage());
-		rttr.addAttribute("perPageNum", cri.getPerPageNum());
-		rttr.addAttribute("msg", "SUCCESS");
-		
-		return "redirect:/board/listPage";
+	    rttr.addAttribute("perPageNum", cri.getPerPageNum());
+	    rttr.addFlashAttribute("msg", "SUCCESS");
+	    
+	    return "redirect:/board/listPage";
 	}
 }
